@@ -7,16 +7,12 @@
                 <h1><a href="">Django geHgu Blog</a></h1>
             </div>
 
-            <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My first post</a></h2>
-                <p>Bravest Warriors is a Canadian-American animated web series created by Pendleton Ward, the creator of Adventure Time, and directed by Breehn Burns. The series is produced by Frederator Studios for their Cartoon Hangover YouTube channel. Fred Seibert, Burns, and Will McRobb and Chris Viscardi are the show's executive producers</p>
-            </div>
-
-            <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Set in the year 3085, the series follows four teenage heroes-for-hire as they warp through the universe to save adorable aliens and their worlds using the power of their emotions.</p>
-            </div>
+	         {% for post in posts %}
+		        <div>
+		            <p>published: {{ post.published_date }}</p>
+		            <h1><a href="">{{ post.title }}</a></h1>
+		            <p>{{ post.text|linebreaksbr }}</p>
+		        </div>
+	    	{% endfor %}
         </body>
     </html>
